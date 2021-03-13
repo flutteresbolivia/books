@@ -30,7 +30,7 @@ export const startSearchBooks = (searchText) => {
   };
 };
 
-export const setUpdateBook= (shelf, book) => {
+export const setUpdateBook = (shelf, book) => {
   return async (dispatch) => {
     await update(book, shelf);
     dispatch(startLoadingBooks());

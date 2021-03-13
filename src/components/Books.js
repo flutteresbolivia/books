@@ -4,7 +4,6 @@ import '../App.css';
 import { BookShelf } from './BookShelf';
 
 export const Books = () => {
-  
   return (
     <div className='list-books'>
       <div className='list-books-title'>
@@ -12,11 +11,7 @@ export const Books = () => {
       </div>
       <div className='list-books-content'>
         <div>
-         
-            <BookShelf
-             
-            />
-          
+          <BookShelf />
         </div>
       </div>
       <div className='open-search'>

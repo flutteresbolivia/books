@@ -18,11 +18,11 @@ export const Search = ({ history }) => {
   const { searchText } = formValues;
   //   const searchResults =  useMemo( () =>  dispatch( startSearchBooks(q), [q, dispatch]));
   const { books } = useSelector((state) => state.search);
-  console.log(books)
-//   useEffect(() => {
-//     dispatch(startSearchBooks(q));
-//     console.log('DISPATCH');
-//   }, [q, dispatch]);
+  console.log(books);
+  //   useEffect(() => {
+  //     dispatch(startSearchBooks(q));
+  //     console.log('DISPATCH');
+  //   }, [q, dispatch]);
   const handleSearch = (e) => {
     e.preventDefault();
     history.push(`?q=${searchText}`);
@@ -52,11 +52,16 @@ export const Search = ({ history }) => {
       </div>
       <div className='search-books-results'>
         <ol className='books-grid'>
-            {
-               Object.prototype.toString.call( books ) === '[object Array]' ?  books.map((book, index) => (
-                    <BookComponent key={index} book={book} />
-                  )) : <div> <h2>Sin resultados con la busqueda : <strong>{q}</strong></h2></div>
-            }
+          {Object.prototype.toString.call(books) === '[object Array]' ? (
+            books.map((book, index) => <BookComponent key={index} book={book} />)
+          ) : (
+            <div>
+              {' '}
+              <h2>
+                Sin resultados con la busqueda : <strong>{q}</strong>
+              </h2>
+            </div>
+          )}
         </ol>
       </div>
     </div>
